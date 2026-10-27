@@ -24,7 +24,7 @@ Almost all text lives in `src/data/content.js` (contact details, services, branc
 Images are in `public/images/`.
 
 **Before going live:**
-- `TESTIMONIALS` are sample quotes marked "Sample" — replace with real, approved client quotes and remove `sample: true`.
+- `TESTIMONIALS`: the first entry is shown as the large featured quote.
 - The `INSIGHTS` article bodies are drafts — review and edit them.
 
 ## Contact form

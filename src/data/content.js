@@ -12,7 +12,7 @@ import {
 export const CONTACT = {
   whatsapp: '237677359801',
   whatsappDisplay: '+237 677 359 801',
-  email: 'johnayuknchong@gmail.com',
+  email: 'drmbengconsulting@gmail.com',
 }
 
 export const waLink = (text = 'Hello Dr. Mbeng & Partners, I would like to enquire about a training program.') =>
@@ -79,28 +79,29 @@ export const BRANCHES = [
   { title: 'Team Building & Emotional Intelligence', icon: HeartHandshake, practice: 'corporate' },
 ]
 
-// Sample testimonials — replace with real, approved quotes from clients.
+// Testimonials. `quote` is a list of paragraphs. The first entry is shown as the featured quote.
 export const TESTIMONIALS = [
   {
-    quote:
-      "Dr. Mbeng's workshop gave our supervisors tools they used the very next week. The delegation and coaching module alone changed how our floor runs.",
-    name: 'Client name',
-    org: 'Organisation',
-    sample: true,
+    quote: [
+      'I had the privilege of being trained by Dr. John Ayuk Mbeng at the Pan-African Institute for Development West Africa (PAID-WA), Yaoundé Local Support Centre, during my Master’s degree in Gender and Project Management. His classes are exceptionally interactive and engaging, and he has a remarkable ability to transform complex concepts into clear, practical understanding. Beyond my personal experience, I have heard similar praise from fellow students. My experience with Dr. Mbeng remains one of the most valuable highlights of my Master’s journey.',
+      'His encouragement, guidance, and dedication extend beyond the classroom, inspiring students to persevere even when the journey becomes challenging. He doesn’t just teach; he inspires, empowers, and impacts lives.',
+    ],
+    name: 'Zifac Brenda',
+    org: 'Master’s Degree in Gender and Project Management, PAID-WA',
   },
   {
-    quote:
-      'Our customer retention numbers improved within a quarter of the sales training. The objection-handling framework was exactly what our team needed.',
-    name: 'Client name',
-    org: 'Organisation',
-    sample: true,
+    quote: [
+      'An exceptional lecturer with a genuine passion for teaching and a sincere commitment to the growth and success of his students. Your dedication, patience, encouragement, and willingness to share your knowledge always, makes you more than just a lecturer. You are a true inspiration and a wonderful mentor. Your positive impact, the knowledge you share, and the lives you continue to touch through your teachings will always be recognised and deeply appreciated.',
+    ],
+    name: 'Manka Carine',
+    org: 'Student, PAID-WA',
   },
   {
-    quote:
-      "The post-training WhatsApp coaching made the difference — it wasn't a one-off session, it was a month of real support.",
-    name: 'Client name',
-    org: 'Organisation',
-    sample: true,
+    quote: [
+      'Dr. Ayuk John is one of the most dedicated lecturers I’ve had. His lessons are easy to follow, even when the topic is complex, and he genuinely cares about his students’ progress. His positive attitude makes learning feel encouraging rather than stressful. If I could suggest one thing, it would be adding more hands-on practice projects, but I’m confident his web training/teaching company will do well. I’d recommend learning from him.',
+    ],
+    name: 'Alvine Agbor',
+    org: 'Student',
   },
 ]
 

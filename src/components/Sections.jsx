@@ -69,29 +69,72 @@ export function BranchesGrid() {
 }
 
 /* ---------- Testimonials ---------- */
+function Initials({ name, light = false }) {
+  const initials = name
+    .split(' ')
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+  return (
+    <span
+      className={`grid h-11 w-11 shrink-0 place-items-center rounded-full text-sm font-semibold ${
+        light ? 'bg-gold-400 text-plum-950' : 'bg-plum-100 text-plum-700'
+      }`}
+      aria-hidden
+    >
+      {initials}
+    </span>
+  )
+}
+
 export function Testimonials() {
+  const [featured, ...rest] = TESTIMONIALS
   return (
     <section className="bg-sand py-24">
       <Container>
-        <SectionHeading eyebrow="What clients say" title="Feedback from recent programs" center />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <figure key={i} className="relative flex flex-col rounded-3xl border border-plum-100 bg-white p-8 shadow-card">
-              <Quote className="h-8 w-8 text-gold-400" aria-hidden />
-              <blockquote className="mt-5 flex-1 font-display text-lg leading-relaxed text-ink">{t.quote}</blockquote>
-              <figcaption className="mt-8 flex items-center gap-3 border-t border-plum-100 pt-5">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-plum-100 font-semibold text-plum-700">
-                  {t.name.charAt(0)}
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="In the words of those we’ve trained"
+          intro="Feedback from students and participants in Dr. Mbeng’s programs."
+          center
+        />
+
+        <figure className="relative mt-14 overflow-hidden rounded-[2rem] bg-plum-900 p-8 text-white shadow-soft sm:p-12">
+          <div className="hero-glow pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+          <div className="relative grid gap-8 lg:grid-cols-12">
+            <Quote className="h-10 w-10 text-gold-300 lg:col-span-1" aria-hidden />
+            <div className="lg:col-span-11">
+              <blockquote className="space-y-5 font-display text-lg leading-relaxed text-plum-50 sm:text-xl">
+                {featured.quote.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
+                <Initials name={featured.name} light />
+                <span className="text-sm">
+                  <span className="block font-semibold text-white">{featured.name}</span>
+                  <span className="block text-plum-200">{featured.org}</span>
                 </span>
+              </figcaption>
+            </div>
+          </div>
+        </figure>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {rest.map((t) => (
+            <figure key={t.name} className="flex flex-col rounded-3xl border border-plum-100 bg-white p-8 shadow-card sm:p-10">
+              <Quote className="h-8 w-8 text-gold-400" aria-hidden />
+              <blockquote className="mt-5 flex-1 space-y-4 text-[1.02rem] leading-relaxed text-ink">
+                {t.quote.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-4 border-t border-plum-100 pt-5">
+                <Initials name={t.name} />
                 <span className="text-sm">
                   <span className="block font-semibold text-plum-900">{t.name}</span>
                   <span className="block text-slate">{t.org}</span>
                 </span>
-                {t.sample && (
-                  <span className="ml-auto rounded-full bg-gold-200 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-gold-600">
-                    Sample
-                  </span>
-                )}
               </figcaption>
             </figure>
           ))}
